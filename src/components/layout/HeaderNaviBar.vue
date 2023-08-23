@@ -6,10 +6,8 @@
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
                     <b-nav-item href="#" router-link to="/">홈</b-nav-item>
+                    <b-nav-item href="#" router-link to="/community/list/1">술 상품 보기</b-nav-item>
 
-                    <b-nav-item href="#" router-link to="/hotPlace">술 상품 보기</b-nav-item>
-                    <b-nav-item href="#" router-link to="/plan">여행계획</b-nav-item>
-                    <b-nav-item href="#" router-link to="/community/list/1">커뮤니티</b-nav-item>
                 </b-navbar-nav>
 
                 <b-navbar-nav class="ml-auto">
@@ -20,8 +18,7 @@
                     <b-nav-item-dropdown text="마이페이지" v-else right>
                         <b-dropdown-item href="#" @click="moveUserInformation">내정보 조회</b-dropdown-item>
                         <b-dropdown-divider></b-dropdown-divider>
-                        <b-dropdown-item href="#" router-link to="/user/userplanlist">My Plan</b-dropdown-item>
-                        <b-dropdown-item href="#" router-link to="/hotplace">Hotplace</b-dropdown-item>
+                        <b-dropdown-item href="#" router-link to="/liquors">장바구니</b-dropdown-item>
                         <b-dropdown-divider></b-dropdown-divider>
                         <b-dropdown-item href="#" @click="logoutConfirm">로그아웃</b-dropdown-item>
                     </b-nav-item-dropdown>

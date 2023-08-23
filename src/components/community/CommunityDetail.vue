@@ -49,14 +49,11 @@
             </b-col>
             <b-col></b-col>
         </b-row>
-        <!-- Comment Part -->
-        <CommentList :boardId="parseInt(this.$route.params.boardId)"></CommentList>
 </b-container>
 </template>
 
 <script>
 import http from "@/assets/js/community/http";
-import CommentList from '@/components/community/CommentList.vue';
 import { mapState } from "vuex";
 import BeforeSite from "../common/BeforeSite.vue";
 export default {
@@ -119,7 +116,6 @@ export default {
         })
     },
     components: {
-    CommentList,
     BeforeSite
 }
 };

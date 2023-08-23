@@ -3,20 +3,10 @@
         <b-row>
             <b-col></b-col>
             <b-col cols="6">
-                <p class="text-center font-weight-bold" id="community-text">게시판</p>
+                <p class="text-center font-weight-bold" id="community-text">술 상품 보기</p>
             </b-col>
             <b-col></b-col>
         </b-row>
-
-        <!-- 게시글 추가 버튼 -->
-        <b-row>
-            <b-col cols="1"></b-col>
-            <b-col class="text-center">
-                <b-icon id="circle-button" icon="plus-circle-fill" @click="addArticle"></b-icon>
-            </b-col>
-            <b-col cols="1"></b-col>
-        </b-row>
-
         <b-row class="p-3">
                     <b-col cols="1"></b-col>
                     <b-col>
@@ -65,7 +55,7 @@
 </template>
 
 <script>
-import http from "@/assets/js/community/http";
+import http  from "@/assets/js/community/http";
 import { mapState } from "vuex";
 
 export default {
@@ -92,15 +82,17 @@ export default {
             ],
                options: [
                 { value: null, text: "카테고리" },
-                { value: "NOTICE", text: "공지사항" },
-                { value: "COMMUNITY", text: "커뮤니티" },
+                { value: "NOTICE", text: "타입" },
+                { value: "COMMUNITY", text: "지역" },
             ],
         };
     },
 
     created() {
         this.currentPage = this.$route.params.currentPage;
-          http.get(`/board/list/${this.currentPage}`).then((response) => {
+        http.get(`/liquors`
+        ).then((response) => {
+            console.log(response.data);
             this.articles = response.data?.boards?.page;
               this.currentPage = this.$route.params.currentPage;
               this.endPage = response.data?.boards?.endPage;            
@@ -141,9 +133,7 @@ export default {
                 this.articles = response.data?.boards?.page;
             });
         },
-        addArticle() {
-            this.$router.push('/community/write');
-        },
+
         viewArticle(article) {
             this.$router.push({
                 name: "boardview",

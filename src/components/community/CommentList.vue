@@ -46,7 +46,7 @@ export default {
         submitComment() {
             if (!this.isLogin) {
                 alert("로그인이 필요한 서비스입니다.");
-                this.$router.push("/user/login");
+                this.$router.push("/aut/login");
                 return;
             }
             if (this.content == "") {

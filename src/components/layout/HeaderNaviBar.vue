@@ -14,8 +14,8 @@
 
                 <b-navbar-nav class="ml-auto">
                     <b-nav-item-dropdown text="시작" v-if="!isLogin" right>
-                        <b-dropdown-item href="#" router-link to="/user/login">로그인</b-dropdown-item>
-                        <b-dropdown-item href="#" router-link to="/user/join">회원가입</b-dropdown-item>
+                        <b-dropdown-item href="#" router-link to="/auth/login">로그인</b-dropdown-item>
+                        <b-dropdown-item href="#" router-link to="/auth/join">회원가입</b-dropdown-item>
                     </b-nav-item-dropdown>
                     <b-nav-item-dropdown text="마이페이지" v-else right>
                         <b-dropdown-item href="#" @click="moveUserInformation">내정보 조회</b-dropdown-item>

@@ -29,18 +29,15 @@ const userStore = {
   },
   actions: {
     async userLogin({ commit }, user) {
+      console.log(user);
       await login(
         user,
         ({ data }) => {
-          if (data.success) {
+          console.log(data);
+          if (data.status == 200) {
             let accessToken = data["access-token"];
-            let refreshToken = data["refresh-token"];
-
             sessionStorage.setItem("access-token", accessToken);
-            sessionStorage.setItem("refresh-token", refreshToken);
-
             console.log(accessToken);
-            console.log(refreshToken);
             commit("SET_USER_ID", user.userId);
             commit("SET_IS_LOGIN", true);
           } else {
@@ -70,6 +67,7 @@ const userStore = {
         },
         (error) => {
           console.log(error);
+          alert(error.message);
         }
       );
     },
@@ -110,15 +108,14 @@ const userStore = {
         user,
         ({ data }) => {
           console.log(data);
-          if (data.success) {
+          if (data.status == 200) {
             router.push({ name: "userLogin" });
-            alert("회원 가입 성공!");
+            alert(data.message);
           } else {
-            alert("회원 가입 실패!");
+            alert(data.message);
           }
         },
         (error) => {
-          alert("아이디가 중복됩니다. 회원 가입 실패!");
           console.log(error);
         }
       );

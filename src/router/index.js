@@ -67,11 +67,11 @@ const routes = [
     ],
   },
   {
-    path: "/user",
-    name: "user",
+    path: "/auth",
+    name: "auth",
     component: () =>
       import(/* webpackChunkName: "community" */ "../views/UserView.vue"),
-    redirect: "/user/login",
+    redirect: "/auth/login",
     children: [
       {
         path: "login",

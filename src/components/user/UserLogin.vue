@@ -20,14 +20,13 @@ export default {
     methods: {
         ...mapActions(userStore, ["userLogin"]),
         async loginConfirm(){
-
             await this.userLogin(this.user);
 
             if(this.isLogin){
                 this.$router.push({ name: "home" });
                 alert("로그인 되었습니다.");
-            }else{
-                alert("Id, Password 를 확인하세요");
+            } else {
+            console.log("로그인 실패");
             }
 
         },

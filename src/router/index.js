@@ -97,29 +97,13 @@ const routes = [
             /* webpackChunkName: "community" */ "@/components/user/UserInformation.vue"
           ),
       },
-      {
-        path: "userplan",
-        name: "userPlan",
-        component: () =>
-          import(
-            /* webpackChunkName: "community" */ "@/components/user/UserPlan.vue"
-          ),
-      },
-      {
-        path: "userplanlist",
-        name: "UserPlanList",
-        component: () =>
-          import(
-            /* webpackChunkName: "community" */ "@/components/user/UserPlanList.vue"
-          ),
-      },
     ],
   },
   {
-    path: "/hotplace",
-    name: "hotPlace",
+    path: "/liquors",
+    name: "liquors",
     component: HotPlaceView,
-    redirect: "/hotplace/list",
+    redirect: "/liquors/list",
     children: [
       {
         path: "list",

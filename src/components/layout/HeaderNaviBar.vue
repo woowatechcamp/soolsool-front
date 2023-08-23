@@ -7,7 +7,7 @@
                 <b-navbar-nav>
                     <b-nav-item href="#" router-link to="/">홈</b-nav-item>
 
-                    <b-nav-item href="#" router-link to="/hotPlace">핫플공유</b-nav-item>
+                    <b-nav-item href="#" router-link to="/hotPlace">술 상품 보기</b-nav-item>
                     <b-nav-item href="#" router-link to="/plan">여행계획</b-nav-item>
                     <b-nav-item href="#" router-link to="/community/list/1">커뮤니티</b-nav-item>
                 </b-navbar-nav>

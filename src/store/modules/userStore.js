@@ -15,6 +15,7 @@ const userStore = {
     isLogin: false,
     userId: "",
     userInfo: null,
+    message: "",
   },
   mutations: {
     SET_IS_LOGIN: (state, isLogin) => {
@@ -26,6 +27,9 @@ const userStore = {
     SET_USER_INFO: (state, userInfo) => {
       state.userInfo = userInfo;
     },
+    SET_MESSAGE: (state, message) => {
+      state.message = message;
+    },
   },
   actions: {
     async userLogin({ commit }, user) {
@@ -35,9 +39,10 @@ const userStore = {
         ({ data }) => {
           console.log(data);
           if (data.status == 200) {
-            let accessToken = data["access-token"];
+            let accessToken = data.data.accessToken;
             sessionStorage.setItem("access-token", accessToken);
             console.log(accessToken);
+            commit("SET_MESSAGE", user.message);
             commit("SET_USER_ID", user.userId);
             commit("SET_IS_LOGIN", true);
           } else {
@@ -58,7 +63,6 @@ const userStore = {
             commit("SET_USER_ID", "");
             commit("SET_USER_INFO", null);
             sessionStorage.removeItem("access-token");
-            sessionStorage.removeItem("refresh-token");
 
             // router.push({ name: "home" });
           } else {

@@ -29,7 +29,7 @@ export default {
 
     methods: {
         addCart() {
-            http.post('/cart/', {
+            http.post('/cart-items/', {
                 liquorId: this.liquor.id,
                 quantity: 1,
             }).then((response) => {

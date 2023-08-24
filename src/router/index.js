@@ -2,6 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import HotPlaceView from "../views/HotPlaceView.vue";
+import CartView from "../views/CartView.vue";
+import OrderView from "../views/OrderView.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -74,11 +76,7 @@ const routes = [
             /* webpackChunkName: "community" */ "@/components/user/UserInformation.vue"
           ),
       },
-
-
     ],
-
-    
   },
   {
     path: "/hotplace",
@@ -97,6 +95,65 @@ const routes = [
     
     ],
   },
+  {
+    path: "/cart",
+    name: "cart",
+    component: CartView,
+    children: [
+      {
+        path: "list",
+        name: "CartList",
+        component: () =>
+          import(
+            /* webpackChunkName: "community" */ "@/components/cart/CartList.vue"
+          ),
+      },]
+  },
+
+  {
+    path: "/order",
+    name: "order",
+    component: OrderView,
+    children: [
+      {
+        path: "ready/:receiptId",
+        name: "OrderReady",
+        component: () =>
+          import(
+            /* webpackChunkName: "community" */ "@/components/order/OrderReady.vue"
+          ),
+
+      },
+      {
+        path: "complete/:orderId",
+        name: "OrderComplete",
+        component: () =>
+          import(
+            /* webpackChunkName: "community" */ "@/components/order/OrderComplete.vue"
+          ),
+      },
+    
+{
+        path: "detail/:orderId",
+        name: "OrderDetail",
+        component: () =>
+
+          import(
+            /* webpackChunkName: "community" */ "@/components/order/OrderDetail"
+          ),
+      },
+      {
+        path: "list",
+        name: "OrderList",
+        component: () =>
+          import(
+            /* webpackChunkName: "community" */ "@/components/order/OrderList"
+          ),
+      },
+    ],
+    
+  },
+
 ];
 
 const router = new VueRouter({

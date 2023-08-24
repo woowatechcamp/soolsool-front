@@ -2,7 +2,9 @@
   <div>
     <b-row class="mid-align">
       <b-col class="pl-5 m-4">
-        <span class="title-text"> SOOLSOOL</span>
+        <span class="title-text"> 술술 
+          넘어가는 쇼핑몰
+        </span>
       </b-col>
    
     </b-row>

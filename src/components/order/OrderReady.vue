@@ -46,8 +46,6 @@ export default {
                 receiptId: this.receipts.id,
             }).then((response) => {
                 console.log(response.data);
-                // redirect
-             //   window.open(response.data.data.nextRedirectPcUrl);
              window.location.href = response.data.data.nextRedirectPcUrl;
             });
             

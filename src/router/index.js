@@ -35,14 +35,7 @@ const routes = [
             /* webpackChunkName: "community" */ "@/components/community/CommunityList.vue"
           ),
       },
-      {
-        path: "view/:boardId",
-        name: "boardview",
-        component: () =>
-          import(
-            /* webpackChunkName: "board" */ "@/components/community/CommunityDetail"
-          ),
-      },
+      
     ],
   },
   {

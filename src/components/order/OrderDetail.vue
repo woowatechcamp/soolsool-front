@@ -1,5 +1,7 @@
 <template>
     <div>
+        <BeforeSite></BeforeSite>
+
         <b-row>주문번호 : {{ order.orderId }}</b-row>
 
         <b-row>구매 시간 : {{ order.createdAt }}</b-row>
@@ -17,6 +19,7 @@
 <script>
 import OrderItem from "@/components/order/OrderItem.vue";
 import http from "@/assets/js/community/http";
+import BeforeSite from "../common/BeforeSite.vue";
 export default {
     data() {
         return {
@@ -36,13 +39,12 @@ export default {
     methods: {
 
     },
-components: { OrderItem },
+components: { OrderItem, BeforeSite },
     created() {
         http.get(`/orders/${this.$route.params.orderId}`).then((response) => {
             this.order = response.data.data;
             console.log(this.order);
         });
-        
 
     }
 };

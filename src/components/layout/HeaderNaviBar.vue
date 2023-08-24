@@ -16,9 +16,10 @@
                         <b-dropdown-item href="#" router-link to="/auth/join">회원가입</b-dropdown-item>
                     </b-nav-item-dropdown>
                     <b-nav-item-dropdown text="마이페이지" v-else right>
-                        <b-dropdown-item href="#" @click="moveUserInformation">내정보 조회</b-dropdown-item>
-                        <b-dropdown-divider></b-dropdown-divider>
+                 
                         <b-dropdown-item href="#" router-link to="/cart/list">장바구니</b-dropdown-item>
+                        <b-dropdown-divider></b-dropdown-divider>
+                        <b-dropdown-item href="#" router-link to="/order/list">주문내역</b-dropdown-item>
                         <b-dropdown-divider></b-dropdown-divider>
                         <b-dropdown-item href="#" @click="logoutConfirm">로그아웃</b-dropdown-item>
                     </b-nav-item-dropdown>

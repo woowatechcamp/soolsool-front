@@ -33,8 +33,9 @@ export default {
                 liquorId: this.liquor.id,
                 quantity: 1,
             }).then((response) => {
-                console.log(response.data);
-                alert("장바구니에 담겼습니다.");
+                alert(response.data.message);
+            }).catch((err) => {
+                alert(err.response.data.message);
             });
            
         },

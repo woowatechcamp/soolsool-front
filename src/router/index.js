@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import HotPlaceView from "../views/HotPlaceView.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -73,6 +74,27 @@ const routes = [
             /* webpackChunkName: "community" */ "@/components/user/UserInformation.vue"
           ),
       },
+
+
+    ],
+
+    
+  },
+  {
+    path: "/hotplace",
+    name: "hotPlace",
+    component: HotPlaceView,
+    redirect: "/hotplace/list",
+    children: [
+      {
+        path: "view/:hotPlaceId",
+        name: "hotPlaceDetail",
+        component: () =>
+          import(
+            /* webpackChunkName: "board" */ "@/components/community/HotPlaceDetail"
+          ),
+      },
+    
     ],
   },
 ];

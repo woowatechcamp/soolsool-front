@@ -4,20 +4,16 @@
       <b-col class="pl-5 m-4">
         <span class="title-text"> SOOLSOOL</span>
       </b-col>
-      <b-col class="m-4">
-        <random-photo></random-photo>
-      </b-col>
+   
     </b-row>
   </div>
 </template>
 
 <script>
-import RandomPhoto from "@/components/home/RandomPhoto.vue";
 
 export default {
   name: "HomeView",
   components: {
-    RandomPhoto,
   },
 };
 </script>

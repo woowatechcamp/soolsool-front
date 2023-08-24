@@ -79,10 +79,10 @@ const routes = [
     children: [
       {
         path: "view/:hotPlaceId",
-        name: "hotPlaceDetail",
+        name: "LiquorDetail",
         component: () =>
           import(
-            /* webpackChunkName: "board" */ "@/components/community/HotPlaceDetail"
+            /* webpackChunkName: "board" */ "@/components/community/LiquorDetail"
           ),
       },
     

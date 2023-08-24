@@ -2,7 +2,6 @@
 import {mapActions, mapState} from "vuex";
 
 const userStore = "userStore";
-
 export default {
     name: "UserLogin",
     
@@ -21,15 +20,15 @@ export default {
         ...mapActions(userStore, ["userLogin"]),
         async loginConfirm(){
             await this.userLogin(this.user);
-
             if(this.isLogin){
                 this.$router.push({ name: "home" });
                 alert("로그인 되었습니다.");
             } else {
-            console.log("로그인 실패");
+                alert("로그인에 실패하였습니다.");
             }
 
         },
+       
         moveFindPassword(){
             this.$router.push({ name: "findPassword" });
         }

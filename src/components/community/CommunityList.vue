@@ -21,8 +21,8 @@
         </b-row>
         
         <b-row v-if="items&& items.length>0" cols="1" cols-md="3" >
-            <HotPlaceItem v-for="(item, index) in items" :key="index" :hotPlace="item" >
-            </HotPlaceItem>
+            <LiquorItem v-for="(item, index) in items" :key="index" :hotPlace="item" >
+            </LiquorItem>
         </b-row>
         <b-row v-else>
             <b-col class="text-center" > 등록된 술 상품이  없습니다.</b-col>
@@ -33,7 +33,7 @@
 <script>
 import http  from "@/assets/js/community/http";
 import { mapState } from "vuex";
-import HotPlaceItem from '@/components/community/HotPlaceItem.vue';
+import LiquorItem from '@/components/community/LiquorItem.vue';
 
 export default {
     name: 'CommunityList',
@@ -58,7 +58,7 @@ export default {
       });
        
     },
-    components: { HotPlaceItem },
+    components: { LiquorItem },
 
     computed: {
          ...mapState("userStore", ["isLogin", "userId"]),

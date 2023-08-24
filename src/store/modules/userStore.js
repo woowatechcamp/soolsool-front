@@ -51,6 +51,7 @@ const userStore = {
         },
         (error) => {
           console.log(error);
+          alert(error.response.data.message);
         }
       );
     },
@@ -121,6 +122,8 @@ const userStore = {
         },
         (error) => {
           console.log(error);
+          alert(error.response.data.message);
+
         }
       );
     },
@@ -129,16 +132,13 @@ const userStore = {
         userId,
         async ({ data }) => {
           if (data.success) {
-            alert("가라...");
             commit("SET_IS_LOGIN", false);
             commit("SET_USER_ID", "");
             commit("SET_USER_INFO", null);
             sessionStorage.removeItem("access-token");
             sessionStorage.removeItem("refresh-token");
             router.push({ name: "home" });
-          } else {
-            alert("들어올때는 마음대로지만 나갈때는 아니란다..^^");
-          }
+          } 
         },
         (error) => {
           console.log(error);

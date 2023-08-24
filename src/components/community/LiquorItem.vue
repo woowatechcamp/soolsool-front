@@ -1,6 +1,6 @@
 <template>
     <div class="p-2">
-        <div id="circle-item" @click="hotplaceDetail">
+        <div id="circle-item" @click="LiquorDetail">
             <b-img :src="require('@/assets/img/user/sero.jpeg')" alt=""> </b-img>
             <div class="circle-text">{{ hotPlace.name }}</div>
         </div>
@@ -16,10 +16,10 @@ export default {
     },
 
     methods: {
-        hotplaceDetail() {
+        LiquorDetail() {
             console.log(this.hotPlace.id);
             this.$router.push({
-                name: 'hotPlaceDetail',
+                name: 'LiquorDetail',
                 params: {
                     hotPlaceId: this.hotPlace.id,
                 },

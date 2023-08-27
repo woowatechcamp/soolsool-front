@@ -6,6 +6,7 @@ function createUserAxios() {
       "Content-Type": "application/json;charset=utf-8",
       "Authorization": "Bearer " + sessionStorage.getItem("access-token"),
       "Allow-Cross-Origin": "*",
+      "Access-Control-Allow-Origin": "*",
     },
   });
   return userAxios;

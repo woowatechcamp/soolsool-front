@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue";
 import HotPlaceView from "../views/HotPlaceView.vue";
 import CartView from "../views/CartView.vue";
 import OrderView from "../views/OrderView.vue";
+import PayView from "../views/PayView.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -146,7 +147,22 @@ const routes = [
     ],
     
   },
+  {
+    path: "/pay",
+    name: "pay",
+    component: PayView,
+    children: [
+      {
+        path: "success/:receiptId",
+        name: "paySuccess",
+        component: () =>
+          import(
+            /* webpackChunkName: "community" */ "@/components/pay/paySuccess.vue"
+          ),
+        }
+      ]
 
+  }
 ];
 
 const router = new VueRouter({

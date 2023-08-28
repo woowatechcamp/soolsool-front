@@ -18,7 +18,6 @@ const routes = [
     name: "community",
     component: () =>
       import(/* webpackChunkName: "community" */ "../views/CommunityView.vue"),
-    redirect: "/community/list/1",
     children: [
       {
         path: "list",

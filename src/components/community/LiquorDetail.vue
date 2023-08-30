@@ -24,8 +24,6 @@ export default {
         };
     },
     methods: {
-
-
     },
     components: { BeforeSite, LiquorDetailItem},
     created() {

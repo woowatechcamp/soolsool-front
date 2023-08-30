@@ -7,9 +7,7 @@
                 <b-navbar-nav>
                     <b-nav-item href="#" router-link to="/">홈</b-nav-item>
                     <b-nav-item href="#" router-link to="/liquor/list">술 상품 보기</b-nav-item>
-
                 </b-navbar-nav>
-
                 <b-navbar-nav class="ml-auto">
                     <b-nav-item-dropdown text="시작" v-if="!isLogin" right>
                         <b-dropdown-item href="#" router-link to="/auth/login">로그인</b-dropdown-item>

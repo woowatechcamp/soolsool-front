@@ -127,18 +127,28 @@ export default {
         applyFilters() {
             this.afterCursor = null;
             let url = '/liquors?';
-
+            let isFirst = true;
+             
             if (this.selectedManufacturing) {
+                if (!isFirst) url+= "&";
                 url += 'brew=' + this.selectedManufacturing;
+                isFirst = false;
             }
             if (this.selectedRegion) {
-                url += '&region=' + this.selectedRegion;
+                if (!isFirst) url+= "&";
+                url += 'region=' + this.selectedRegion;
+                isFirst = false;
             }
             if (this.selectedStatusType) {
-                url += '&status=' + this.selectedStatusType;
+                if (!isFirst) url+= "&";
+                url += 'status=' + this.selectedStatusType;
+                isFirst = false;
             }
             if (this.brandNameSearch) {
-                url += '&brand=' + this.brandNameSearch;
+                if (!isFirst) url+= "&";
+                url += 'brand=' + this.brandNameSearch;
+                isFirst = false;
+
             }
             console.log(url);
             http.get(url).then((response) => {

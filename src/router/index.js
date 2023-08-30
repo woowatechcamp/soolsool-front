@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import HotPlaceView from "../views/HotPlaceView.vue";
 import CartView from "../views/CartView.vue";
 import OrderView from "../views/OrderView.vue";
 import PayView from "../views/PayView.vue";
@@ -14,8 +13,8 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/community",
-    name: "community",
+    path: "/liquor",
+    name: "liquor",
     component: () =>
       import(/* webpackChunkName: "community" */ "../views/CommunityView.vue"),
     children: [
@@ -33,6 +32,13 @@ const routes = [
         component: () =>
           import(
             /* webpackChunkName: "community" */ "@/components/community/CommunityList.vue"
+          ),
+      },{
+        path: "view/:hotPlaceId",
+        name: "LiquorDetail",
+        component: () =>
+          import(
+            /* webpackChunkName: "board" */ "@/components/community/LiquorDetail"
           ),
       },
       
@@ -71,23 +77,7 @@ const routes = [
       },
     ],
   },
-  {
-    path: "/hotplace",
-    name: "hotPlace",
-    component: HotPlaceView,
-    redirect: "/hotplace/list",
-    children: [
-      {
-        path: "view/:hotPlaceId",
-        name: "LiquorDetail",
-        component: () =>
-          import(
-            /* webpackChunkName: "board" */ "@/components/community/LiquorDetail"
-          ),
-      },
-    
-    ],
-  },
+
   {
     path: "/cart",
     name: "cart",

@@ -45,7 +45,7 @@ import { mapState } from "vuex";
 import LiquorItem from '@/components/community/LiquorItem.vue';
 
 export default {
-    name: 'CommunityList',
+    name: 'boardList',
  
     data() {
         return {
@@ -60,6 +60,7 @@ export default {
         afterCursor: null, // Cursor for pagination
         selectedManufacturing: null, // 선택된 제조 방식
       selectedRegion: null, // 선택된 지역
+      selectedStatusType : null, // 선택된 판매 상태,
       manufacturingOptions: [
         { value: "소주", text: "소주" },
         { value: "증류주", text: "증류주" },
@@ -118,7 +119,6 @@ export default {
                 if (response.data?.data?.hasNext) {
                     this.items = this.items.concat(response.data.data.liquors);
                     this.hasNext = response.data.data.hasNext;
-                    this.beforeCursor = this.afterCursor;
                     this.afterCursor = response.data.data.nextCursorId;
                 }
             });
